@@ -1,6 +1,6 @@
 name: @name@
-main: nl.thedutchmc.@name@.@name@
+main: @groupId@.@name@.@name@
 version: @version@
-author: TheDutchMC
-api-version: 1.16
+author: @author@
+api-version: @apiVersion@
 

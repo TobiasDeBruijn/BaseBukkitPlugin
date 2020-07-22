@@ -18,13 +18,14 @@ allprojects {
   	  	maven{ url "https://hub.spigotmc.org/nexus/content/repositories/snapshots" }
    	 	maven{ url "https://oss.sonatype.org/content/repositories/snapshots" }
     }
-
-    print(pluginGroup)
     
 	processResources {
     	from(sourceSets.main.resources.srcDirs) {
         	filter ReplaceTokens, tokens: [version: version]
 		filter ReplaceTokens, tokens: [name: pluginName]
+		filter ReplaceTokens, tokens: [groupId: pluginGroup]
+		filter ReplaceTokens, tokens: [author: pluginAuthor]
+		filter ReplaceTokens, tokens: [apiVersion: pluginApiVersion]
 		}
     }
 }
