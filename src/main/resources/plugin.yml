@@ -1,0 +1,6 @@
+name: @name@
+main: nl.thedutchmc.@name@.@name@
+version: @version@
+author: TheDutchMC
+api-version: 1.16
+
