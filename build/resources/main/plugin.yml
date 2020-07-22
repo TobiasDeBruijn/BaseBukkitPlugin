@@ -1,6 +1,0 @@
-name: BasePlugin
-main: nl.thedutchmc.BasePlugin.BasePlugin
-version: 1.0
-author: TheDutchMC
-api-version: 1.16
-
