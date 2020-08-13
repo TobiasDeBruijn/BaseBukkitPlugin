@@ -1,6 +1,5 @@
 package nl.thedutchmc.BaseBukkitPlugin;
 
-import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class BaseBukkitPlugin extends JavaPlugin {
@@ -22,10 +21,10 @@ public class BaseBukkitPlugin extends JavaPlugin {
 	}
 	
 	public static void logInfo(String log) {
-		Bukkit.getLogger().info("[" + BaseBukkitPlugin.INSTANCE.getDescription().getName() + "] " + log);	
+		INSTANCE.getLogger().info(log);
 	}
 	
 	public static void logWarn(String log) {
-		Bukkit.getLogger().warning("[" + BaseBukkitPlugin.INSTANCE.getDescription().getName() + "] " + log);	
+		INSTANCE.getLogger().warning(log);
 	}
 }
