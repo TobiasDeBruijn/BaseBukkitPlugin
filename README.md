@@ -6,6 +6,7 @@ I use this as a base template for my plugins.
 ### Comes with: 
 - Main class
 - Configuration Handler
+- GitHub Actions workflow to create a Release with an attached JAR when you push a tag
 
 ### Easy testing:
 ``gradle testJar`` will put a jar in server/plugins
