@@ -10,8 +10,8 @@ allprojects {
 	version = pluginVersion
 	group = pluginGroup	
 
-	sourceCompatibility = 1.8
-	targetCompatibility = 1.8
+	sourceCompatibility = 1.11
+	targetCompatibility = 1.11
 
 	repositories {
 		jcenter()
@@ -22,22 +22,22 @@ allprojects {
 	processResources {
     	from(sourceSets.main.resources.srcDirs) {
         	filter ReplaceTokens, tokens: [version: version]
-		filter ReplaceTokens, tokens: [name: pluginName]
-		filter ReplaceTokens, tokens: [groupId: pluginGroup]
-		filter ReplaceTokens, tokens: [author: pluginAuthor]
-		filter ReplaceTokens, tokens: [apiVersion: pluginApiVersion]
+			filter ReplaceTokens, tokens: [name: pluginName]
+			filter ReplaceTokens, tokens: [mainClassName: mainClassName]
+			filter ReplaceTokens, tokens: [groupId: pluginGroup]
+			filter ReplaceTokens, tokens: [author: pluginAuthor]
+			filter ReplaceTokens, tokens: [apiVersion: pluginApiVersion]
 		}
     }
 }
 
 dependencies {
 	
-	compileOnly 'org.spigotmc:spigot-api:1.16.1-R0.1-SNAPSHOT'
-	
+	//Spigot API
+	compileOnly 'org.spigotmc:spigot-api:1.16.4-R0.1-SNAPSHOT'
 }
 
 task testJar(type: Jar) {
-	
 	description 'Build a test Jar'
 	archiveClassifier = 'DEV'
 	from sourceSets.main.output
@@ -45,9 +45,20 @@ task testJar(type: Jar) {
 }
 
 task releaseJar(type: Jar) {
-
 	description 'Build a release Jar'
 	archiveClassifier = 'RELEASE'
 	from sourceSets.main.output
 	destinationDirectory = file("$rootDir/releases")
 }
+
+//This task is for GitHub Actions only
+task ghActions(type: Jar) {	
+	description 'GitHub Actions Task. Do not use in regular development!'
+	version = ''
+	archiveClassifier = ''
+	archiveBaseName = 'output'
+	
+	from sourceSets.main.output
+	destinationDirectory = file("$rootDir/actions")
+}
+

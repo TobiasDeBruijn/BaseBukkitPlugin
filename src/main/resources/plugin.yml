@@ -1,5 +1,5 @@
 name: @name@
-main: @groupId@.@name@.@name@
+main: @groupId@.@mainClassName@
 version: @version@
 author: @author@
 api-version: @apiVersion@
