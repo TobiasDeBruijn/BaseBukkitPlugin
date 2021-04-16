@@ -1,6 +1,6 @@
-name: @name@
-main: @groupId@.@mainClassName@
+name: 
+main:
 version: @version@
-author: @author@
-api-version: @apiVersion@
+author: 
+api-version: 
 

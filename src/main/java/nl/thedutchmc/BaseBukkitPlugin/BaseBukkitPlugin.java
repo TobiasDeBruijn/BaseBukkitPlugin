@@ -1,4 +1,4 @@
-package nl.thedutchmc.BaseBukkitPlugin;
+package nl.thedutchmc.basebukkitplugin;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

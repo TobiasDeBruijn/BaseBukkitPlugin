@@ -1,4 +1,4 @@
-package nl.thedutchmc.BaseBukkitPlugin;
+package nl.thedutchmc.basebukkitplugin;
 
 import java.io.File;
 import java.io.IOException;
