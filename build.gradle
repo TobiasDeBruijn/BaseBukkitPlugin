@@ -2,28 +2,20 @@ import org.apache.tools.ant.filters.ReplaceTokens
 
 plugins {
     id 'java'
-    id 'eclipse'
 }
 
-allprojects {
+version = pluginVersion
+group = 'dev.array21'	
 
-	version = pluginVersion
-	group = pluginGroup	
+repositories {
+	mavenCentral()
+	maven{ url "https://hub.spigotmc.org/nexus/content/repositories/snapshots" }
+}
 
-	sourceCompatibility = 1.11
-	targetCompatibility = 1.11
-
-	repositories {
-		jcenter()
-  	  	maven{ url "https://hub.spigotmc.org/nexus/content/repositories/snapshots" }
-   	 	maven{ url "https://oss.sonatype.org/content/repositories/snapshots" }
-    }
-    
-	processResources {
-    	from(sourceSets.main.resources.srcDirs) {
-        	filter ReplaceTokens, tokens: [version: version]
-		}
-    }
+processResources {
+	from(sourceSets.main.resources.srcDirs) {
+		filter ReplaceTokens, tokens: [version: version]
+	}
 }
 
 dependencies {
